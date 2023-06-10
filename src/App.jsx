@@ -1,9 +1,17 @@
 function App() {
 
+  const hola = "Hola mundo";
+
+  const auth = true;
   
   return (
     // todo lo que se ponga aquí es lo que va a mostrarse en la pagina
-    <h1 className="text-6xl font-extrabold">Hola mundo</h1>
+    // En la sección del return no podemos añadir ninguna lógica de javascript
+    // Es solo visualización
+    <div className="my-20 max-w-lg mx-auto bg-white shadow p-10">
+      {hola}
+      {auth ? ' autenticado' : ' no autenticado'}
+    </div>
   )
 }
 
