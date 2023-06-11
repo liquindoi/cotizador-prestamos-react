@@ -1,6 +1,7 @@
 import { useState } from 'react'; // Importamos el useState desde react
 import Header from "./components/Header";
 import Button from "./components/Button";
+import { formatearDinero } from './helpers'; // No es necesario poner el nombre del fichero al haberlo llamado index.js
 
 function App() {
     // [] variable, funcion que modifica la variable; () valor inicial de la variable
@@ -69,7 +70,9 @@ function App() {
              value={cantidad}
       />
 
-      <p className='text-center my-10 text-5xl font-extrabold text-indigo-600'>{cantidad}</p>
+      <p className='text-center my-10 text-5xl font-extrabold text-indigo-600'>
+        {formatearDinero(cantidad)}
+        </p>
     </div>
   )
 }
