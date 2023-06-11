@@ -3,8 +3,11 @@ import Header from "./components/Header";
 
 function App() {
     // [] variable, funcion que modifica la variable; () valor inicial de la variable
-    let [cantidad, setCantidad] = useState(10000); // Destructuring del arreglo propocionado por la función
+    const [cantidad, setCantidad] = useState(10000); // Destructuring del arreglo propocionado por la función
     
+    const MIN = 0;
+    const MAX = 20000;
+    const STEP = 100;
     //console.log(cantidad);
     
     // por convención el nombre de la función comienza por 
@@ -30,6 +33,10 @@ function App() {
           // onChange={ e => console.log(e.target.value)}
              onChange = {handleChange} // Como siempre, la llamada la realizamos sin los paréntesis, 
                                 // para evitar su ejecución directa
+             min={MIN}
+             max={MAX}
+             step={STEP}
+             value={cantidad}
       />
 
       <p className='text-center my-10 text-5xl font-extrabold text-indigo-600'>{cantidad}</p>
