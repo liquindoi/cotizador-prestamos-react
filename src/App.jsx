@@ -1,13 +1,14 @@
 import { useState } from 'react'; // Importamos el useState desde react
 import Header from "./components/Header";
 import Button from "./components/Button";
-import { formatearDinero } from './helpers'; // No es necesario poner el nombre del fichero al haberlo llamado index.js
+import { formatearDinero, calcularTotalPagar } from './helpers'; // No es necesario poner el nombre del fichero al haberlo llamado index.js
 
 function App() {
   // Definimos un nuevo state (meses)  
   // [] variable, funcion que modifica la variable; () valor inicial de la variable
     const [cantidad, setCantidad] = useState(10000); // Destructuring del arreglo propocionado por la función
     const [meses, setMeses] = useState(12); 
+    const [total, setTotal] = useState(0); 
     
     const MIN = 0;
     const MAX = 20000;
