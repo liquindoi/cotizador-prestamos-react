@@ -1,11 +1,12 @@
+import { useState } from 'react'; // Importamos el useState desde react
 import Header from "./components/Header";
 
 function App() {
-
-  const hola = "Hola mundo";
-
-  const auth = true;
-  
+    // [] variable, funcion que modifica la variable; () valor inicial de la variable
+    const [cantidad, setCantidad] = useState(10000); // Destructuring del arreglo propocionado por la función
+    
+    console.log(cantidad);
+    
   return (
     // todo lo que se ponga aquí es lo que va a mostrarse en la pagina
     // En la sección del return no podemos añadir ninguna lógica de javascript
