@@ -4,8 +4,10 @@ import Button from "./components/Button";
 import { formatearDinero } from './helpers'; // No es necesario poner el nombre del fichero al haberlo llamado index.js
 
 function App() {
-    // [] variable, funcion que modifica la variable; () valor inicial de la variable
+  // Definimos un nuevo state (meses)  
+  // [] variable, funcion que modifica la variable; () valor inicial de la variable
     const [cantidad, setCantidad] = useState(10000); // Destructuring del arreglo propocionado por la función
+    const [meses, setMeses] = useState(12); 
     
     const MIN = 0;
     const MAX = 20000;
@@ -79,7 +81,9 @@ function App() {
         </h2>
 
       <select className='mt-5 w-full p-2 bg-white border-gray-300 rounded-lg text-center
-                        text-xl font-bold text-gray-500'>
+                        text-xl font-bold text-gray-500'
+                        value={meses}
+                        onChange = { e => { setMeses(+e.target.value)}}>
         <option value="6">6 Meses</option>
         <option value="12">12 Meses</option>
         <option value="24">24 Meses</option>
