@@ -1,4 +1,4 @@
-import { useState } from 'react'; // Importamos el useState desde react
+import { useState, useEffect } from 'react'; // Importamos el useState desde react
 import Header from "./components/Header";
 import Button from "./components/Button";
 import { formatearDinero, calcularTotalPagar } from './helpers'; // No es necesario poner el nombre del fichero al haberlo llamado index.js
@@ -10,6 +10,12 @@ function App() {
     const [meses, setMeses] = useState(12); 
     const [total, setTotal] = useState(0); 
     
+    useEffect(() =>{
+      const resultadoTotalPagar = calcularTotalPagar(cantidad, meses);
+      setTotal(resultadoTotalPagar);
+
+    }, [cantidad, meses]);
+
     const MIN = 0;
     const MAX = 20000;
     const STEP = 100;
@@ -95,7 +101,7 @@ function App() {
             Resumen <span className='text-indigo-600'>de pagos </span>
           </h2>
           <p className='text-xl text-gray-500 texte-center font-bold'>{meses} Meses</p>
-          <p className='text-xl text-gray-500 texte-center font-bold'> Total a pagar</p>
+          <p className='text-xl text-gray-500 texte-center font-bold'>{formatearDinero(total)} Total a pagar</p>
           <p className='text-xl text-gray-500 texte-center font-bold'> Mensuales</p>
 
           
